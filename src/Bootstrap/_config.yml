@@ -11,7 +11,7 @@ permalink:      pretty
 # Server
 source:         "site"
 destination:    ./_gh_pages
-host:           "localhost"
+host:           "nifty-torvalds-8eb444.netlify.app"
 port:           9001
 baseurl:        ""
 url:            "https://getbootstrap.com"
