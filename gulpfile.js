@@ -46,9 +46,9 @@ var config = {
 };
 
 // server start
-gulp.task('webserver', function () {
-	webserver(config);
-});
+// gulp.task('webserver', function () {
+// 	webserver(config);
+// });
 
 
 /*=========== Compile SCSS ==============*/
@@ -86,7 +86,7 @@ gulp.task('sass', function(cb) {
 		.pipe(gulp.dest('./src/Bootstrap/dist/css'))
 		.pipe(gulp.dest('./app/Bootstrap/dist/css'))
 
-		.pipe(webserver.reload({stream: true}));
+	//	.pipe(webserver.reload({stream: true}));
 		cb();
 });
 
@@ -103,7 +103,7 @@ gulp.task('js', function (cb) {
 		.pipe(gulp.dest('./src/Bootstrap/dist/js'))
 		.pipe(gulp.dest('./app/Bootstrap/dist/js'))
 
-		.pipe(webserver.reload({stream: true}));
+	//	.pipe(webserver.reload({stream: true}));
 
 	cb();
 });
@@ -224,6 +224,6 @@ gulp.task('html-valid', function(cb) {
 
 /*============= Join tasks ==============*/
 
-gulp.task('default', gulp.parallel('webserver', 'watch', 'sass'));
+gulp.task('default', gulp.parallel('watch', 'sass'));
 
 gulp.task('build', gulp.series('clean-app', 'html', 'html-valid', 'sass', 'js', 'svg-min', 'images', 'compress', 'copy-files'));
